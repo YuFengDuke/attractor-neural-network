@@ -33,6 +33,14 @@ patterns = [0, 1, 1, 1, 1, 0;...
             0, 0, 1, 1, 0, 0;...
             0, 0, 1, 1, 0, 0;...
             0, 1, 1, 1, 1, 0];
+
+patterns = [0, 1, 0, 0, 1, 0;...
+            0, 1, 0, 0, 1, 0;...
+            0, 1, 1, 1, 1, 0;...
+            0, 1, 1, 1, 1, 0;...
+            0, 1, 0, 0, 1, 0;...
+            0, 1, 0, 0, 1, 0];
+
 patterns(patterns == 0) = -1;
 patterns = reshape(patterns, 1, 36);
 
@@ -41,7 +49,9 @@ patterns = reshape(patterns, 1, 36);
 I = generate_pattern(36, 1, f);
 
 % you will see the random pattern is attracted to the pattern we learned.
+gif_name = 'attractor_demo.gif';
 figure(1);
+axis off;
 hold on;
 N = size(I,2);
 for neuronal_index = 1:N
@@ -53,4 +63,5 @@ for neuronal_index = 1:N
     end
     imagesc(reshape(I,6,6));
     pause(0.1);
+    
 end

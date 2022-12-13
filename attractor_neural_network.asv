@@ -16,8 +16,6 @@ for i = 1:constant.mu
     sparse_w = sparse_w + synaptic_learning_rule(sparse_index, pattern, constant.f);
 end
 
-sparse_w = sparse_w / constant.mu / constant.N;
-
 W = decode_sparse(sparse_w, sparse_index, constant);
 W = W + constant.pertub * randn(constant.N);
 

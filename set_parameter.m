@@ -1,4 +1,4 @@
-function constant = set_parameter(N, c, mu, f, activation_threshold, sample_size)
+function constant = set_parameter(N, c, mu, f, activation_threshold, sample_size, perb)
 
 % network size
 constant.N = N;
@@ -18,3 +18,9 @@ constant.activation_threshold = activation_threshold;
 
 % the number of sample to check the overlap between network state and patterns
 constant.sample_size = sample_size;
+
+% weighed or binary graph
+constant.weighted = 1;
+
+% asym weight
+constant.pertub = perb;
